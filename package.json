@@ -1,8 +1,10 @@
 {
-    "name": "grunt-cafe-mocha",
-    "description": "A Grunt plugin for running server-side Mocha tests that actually works.",
-    "version": "0.1.6",
-    "homepage": "https://github.com/jdavis/grunt-cafe-mocha",
+    "name": "grunt-mocha-requirejs",
+    "description": "A Grunt plugin for running server-side Mocha tests for RequireJS modules.",
+    "version": "0.1.1",
+    "homepage": "https://github.com/jcarnegie/grunt-mocha-requirejs",
+
+    "private": true,
 
     "author": {
         "name": "Josh Davis",
@@ -10,18 +12,25 @@
         "url": "http://joshldavis.com"
     },
 
+    "contributors": [
+        {
+            "name": "Jeff Carnegie",
+            "email": "jeff.carnegie@gmail.com"
+        }
+    ],
+
     "repository": {
         "type": "git",
-        "url": "git://github.com/jdavis/grunt-cafe-mocha.git"
+        "url": "git://github.com/jcarnegie/grunt-mocha-requirejs.git"
     },
 
     "bugs": {
-        "url": "https://github.com/jdavis/grunt-cafe-mocha/issues"
+        "url": "https://github.com/jcarnegie/grunt-mocha-requirejs/issues"
     },
 
     "licenses": [{
         "type": "MIT",
-        "url": "https://github.com/jdavis/grunt-cafe-mocha/blob/master/LICENSE-MIT"
+        "url": "https://github.com/jcarnegie/grunt-mocha-requirejs/blob/master/LICENSE-MIT"
     }],
 
     "main": "Gruntfile.js",

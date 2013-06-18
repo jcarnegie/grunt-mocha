@@ -8,10 +8,11 @@
 
 'use strict';
 
-var Mocha = require('mocha'),
-    path = require('path'),
-    fs = require('fs'),
-    Base = Mocha.reporters.Base,
+var Mocha     = require('mocha'),
+    requirejs = require('requirejs'),
+    path      = require('path'),
+    fs        = require('fs'),
+    Base      = Mocha.reporters.Base,
 
     cwd = process.cwd(),
     exists = fs.existsSync || path.existsSync,
@@ -21,7 +22,7 @@ module.exports = function(grunt) {
     // Add local node_modules to path
     module.paths.push(cwd, path.join(cwd, 'node_modules'));
 
-    grunt.registerMultiTask('cafemocha', 'Run server-side Mocha tests', function() {
+    grunt.registerMultiTask('mocha_requirejs', 'Run server-side Mocha tests as RequireJS modules', function() {
         var options = this.options({
             asyncOnly: false,
             bail: false,
@@ -37,6 +38,7 @@ module.exports = function(grunt) {
             slow: 75,
             timeout: 2000,
             ui: 'bdd',
+            rjsConfig: {}
         });
 
         // Mocha runner
@@ -77,11 +79,11 @@ module.exports = function(grunt) {
             }
         }
 
-        this.files.forEach(function (f) {
-            f.src.filter(function (file) {
-                mocha.addFile(file);
-            });
-        });
+        // this.files.forEach(function (f) {
+        //     f.src.filter(function (file) {
+        //         mocha.addFile(file);
+        //     });
+        // });
 
         if (options.reporter === 'js-cov' || options.reporter === 'html-cov') {
             if (!options.coverage) return grunt.fail.warn('Coverage option not set.');
@@ -105,18 +107,30 @@ module.exports = function(grunt) {
             };
         }
 
-        mocha.run(function (failures) {
-            // Close output
-            if (output) output.end();
+        // forces mocha to define describe, it, etc in the global namespace
+        mocha.suite.emit("pre-require", global, "", mocha);
 
-            // Restore default process.stdout.write
-            process.stdout.write = _stdout;
+        // add the src files in the task config as deps in the RequireJS config
+        options.rjsConfig.deps = this.filesSrc;
 
-            if (failures) {
-                grunt.fail.warn('Mocha tests failed.');
-            }
+        // set the RequireJS config
+        requirejs.config(options.rjsConfig);
 
-            return async();
+        // require the files via RequireJS
+        requirejs([], function () {
+            mocha.run(function (failures) {
+                // Close output
+                if (output) output.end();
+
+                // Restore default process.stdout.write
+                process.stdout.write = _stdout;
+
+                if (failures) {
+                    grunt.fail.warn('Mocha tests failed.');
+                }
+
+                return async();
+            });
         });
     });
 };
