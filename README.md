@@ -1,8 +1,9 @@
-# grunt-cafe-mocha
+# grunt-mocha
 
-[![Build Status](https://travis-ci.org/jdavis/grunt-cafe-mocha.png)](https://travis-ci.org/jdavis/grunt-cafe-mocha) [![Dependency Status](https://david-dm.org/jdavis/grunt-cafe-mocha.png)](https://david-dm.org/jdavis/grunt-cafe-mocha)
-
-> A Grunt plugin for running server-side Mocha tests that actually works.
+> A Grunt plugin for running server-side Mocha tests.
+> This is a fork of Josh Davis's [grunt-cafe-mocha](https://github.com/jdavis/grunt-cafe-mocha)
+> plugin that's been translated into CoffeeScript and
+> supports testing RequireJS modules.
 
 ## Getting Started
 This plugin requires Grunt `~0.4.1`
@@ -10,13 +11,13 @@ This plugin requires Grunt `~0.4.1`
 If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
 
 ```shell
-npm install grunt-cafe-mocha --save-dev
+npm install grunt-mocha --save-dev
 ```
 
 One the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
 
 ```js
-grunt.loadNpmTasks('grunt-cafe-mocha');
+grunt.loadNpmTasks('grunt-mocha');
 ```
 
 ## The "mocha" task
@@ -47,6 +48,18 @@ grunt.initConfig({
             reporter: 'nyan',
         },
     },
+
+    testRequireJS: {
+        src: 'test/rjs/**/*.test.js',
+        options: {
+            rjsConfig: {
+                baseUrl: "./src",
+                paths: {
+                    foo: "bar/v1.0"
+                }
+            }
+        }
+    }
   },
 })
 ```
@@ -173,6 +186,14 @@ coverage: {
     env: 'ENHANCED_COVERAGE',
 }
 ```
+
+#### options.rjsConfig
+Type: `Object`
+
+Default value: `{}`
+
+If specified, will use the given RequireJS configuration to load the test files
+picked up in the src paths as RequireJS modules.
 
 The `output` option is a path to where the coverage output will be saved to.
 
