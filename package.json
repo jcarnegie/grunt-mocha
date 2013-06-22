@@ -5,15 +5,14 @@
     "homepage": "https://github.com/jcarnegie/grunt-mocha",
 
     "author": {
-        "name": "Josh Davis",
-        "email": "josh@joshldavis.com",
-        "url": "http://joshldavis.com"
+        "name": "Jeff Carnegie",
+        "email": "jeff.carnegie@gmail.com"
     },
 
     "contributors": [
         {
-            "name": "Jeff Carnegie",
-            "email": "jeff.carnegie@gmail.com"
+            "name": "Josh Davis",
+            "email": "josh@joshldavis.com"
         }
     ],
 
