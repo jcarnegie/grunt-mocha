@@ -187,14 +187,6 @@ coverage: {
 }
 ```
 
-#### options.rjsConfig
-Type: `Object`
-
-Default value: `{}`
-
-If specified, will use the given RequireJS configuration to load the test files
-picked up in the src paths as RequireJS modules.
-
 The `output` option is a path to where the coverage output will be saved to.
 
 The `env` option is the name of the `process.env` variable to set to a truthy
@@ -204,6 +196,14 @@ project, `process.env['ENHANCED_COVERAGE']` will be truthy.
 Check out the [Coverage Example][example] for more details.
 
 [example]: #coverage-example
+
+#### options.rjsConfig
+Type: `Object`
+
+Default value: `{}`
+
+If specified, will use the given RequireJS configuration to load the test files
+picked up in the src paths as RequireJS modules.
 
 ### Usage Examples
 
