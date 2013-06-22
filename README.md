@@ -19,14 +19,14 @@ One the plugin has been installed, it may be enabled inside your Gruntfile with 
 grunt.loadNpmTasks('grunt-cafe-mocha');
 ```
 
-## The "cafemocha" task
+## The "mocha" task
 
 ### Overview
-In your project's Gruntfile, add a section named `cafemocha` to the data object passed into `grunt.initConfig()`.
+In your project's Gruntfile, add a section named `mocha` to the data object passed into `grunt.initConfig()`.
 
 ```js
 grunt.initConfig({
-  cafemocha: {
+  mocha: {
     testThis: {
         src: 'test/this/**/*.js',
         options: {
@@ -190,7 +190,7 @@ Check out the [Coverage Example][example] for more details.
 
 ```js
 grunt.initConfig({
-  cafemocha: {
+  mocha: {
     src: 'test/**/*.js',
     options: {
         ui: 'bdd',
@@ -203,7 +203,7 @@ grunt.initConfig({
 
 ```js
 grunt.initConfig({
-    cafemocha: {
+    mocha: {
         src: 'test/**/*.js',
         options: {
             ui: 'tdd',
@@ -216,7 +216,7 @@ grunt.initConfig({
 
 ```js
 grunt.initConfig({
-    cafemocha: {
+    mocha: {
         options: {
             require: ['should', 'something', 'else', 'here'];
         },
@@ -229,7 +229,7 @@ grunt.initConfig({
 
 ```js
 grunt.initConfig({
-    cafemocha: {
+    mocha: {
         foo: {
             src: 'test/foo/*.js',
             options: {
@@ -253,7 +253,7 @@ The complete example of this is included in the [example/](example/) directory.
 
 ```js
 grunt.initConfig({
-    cafemocha: {
+    mocha: {
         // Setting 'coverage' option to true, using defaults
         coverageOne: {
             src: 'test/*.js',

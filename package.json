@@ -1,10 +1,8 @@
 {
-    "name": "grunt-mocha-requirejs",
-    "description": "A Grunt plugin for running server-side Mocha tests for RequireJS modules.",
+    "name": "grunt-mocha",
+    "description": "A Grunt plugin for running server-side Mocha tests.",
     "version": "0.1.1",
-    "homepage": "https://github.com/jcarnegie/grunt-mocha-requirejs",
-
-    "private": true,
+    "homepage": "https://github.com/jcarnegie/grunt-mocha",
 
     "author": {
         "name": "Josh Davis",
@@ -21,16 +19,16 @@
 
     "repository": {
         "type": "git",
-        "url": "git://github.com/jcarnegie/grunt-mocha-requirejs.git"
+        "url": "git://github.com/jcarnegie/grunt-mocha.git"
     },
 
     "bugs": {
-        "url": "https://github.com/jcarnegie/grunt-mocha-requirejs/issues"
+        "url": "https://github.com/jcarnegie/grunt-mocha/issues"
     },
 
     "licenses": [{
         "type": "MIT",
-        "url": "https://github.com/jcarnegie/grunt-mocha-requirejs/blob/master/LICENSE-MIT"
+        "url": "https://github.com/jcarnegie/grunt-mocha/blob/master/LICENSE-MIT"
     }],
 
     "main": "Gruntfile.js",
@@ -50,7 +48,8 @@
     "devDependencies": {
         "should": "*",
         "grunt": "~0.4.1",
-        "grunt-contrib-jshint": "~0.5.4"
+        "grunt-contrib-jshint": "~0.5.4",
+        "grunt-contrib-coffee": "*"
     },
 
     "peerDependencies": {
@@ -63,6 +62,7 @@
         "server",
         "bdd",
         "tdd",
-        "tests"
+        "tests",
+        "requirejs"
     ]
 }
