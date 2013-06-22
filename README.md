@@ -1,4 +1,4 @@
-# grunt-mocha
+# grunt-server-mocha
 
 > A Grunt plugin for running server-side Mocha tests.
 > This is a fork of Josh Davis's [grunt-cafe-mocha](https://github.com/jdavis/grunt-cafe-mocha)
@@ -11,13 +11,13 @@ This plugin requires Grunt `~0.4.1`
 If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
 
 ```shell
-npm install grunt-mocha --save-dev
+npm install grunt-server-mocha --save-dev
 ```
 
 One the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
 
 ```js
-grunt.loadNpmTasks('grunt-mocha');
+grunt.loadNpmTasks('grunt-server-mocha');
 ```
 
 ## The "mocha" task
@@ -27,7 +27,7 @@ In your project's Gruntfile, add a section named `mocha` to the data object pass
 
 ```js
 grunt.initConfig({
-  mocha: {
+  "mocha-server": {
     testThis: {
         src: 'test/this/**/*.js',
         options: {
@@ -211,7 +211,7 @@ picked up in the src paths as RequireJS modules.
 
 ```js
 grunt.initConfig({
-  mocha: {
+  "mocha-server": {
     src: 'test/**/*.js',
     options: {
         ui: 'bdd',
@@ -224,7 +224,7 @@ grunt.initConfig({
 
 ```js
 grunt.initConfig({
-    mocha: {
+    "mocha-server": {
         src: 'test/**/*.js',
         options: {
             ui: 'tdd',
@@ -237,7 +237,7 @@ grunt.initConfig({
 
 ```js
 grunt.initConfig({
-    mocha: {
+    "mocha-server": {
         options: {
             require: ['should', 'something', 'else', 'here'];
         },
@@ -250,7 +250,7 @@ grunt.initConfig({
 
 ```js
 grunt.initConfig({
-    mocha: {
+    "mocha-server": {
         foo: {
             src: 'test/foo/*.js',
             options: {
@@ -274,7 +274,7 @@ The complete example of this is included in the [example/](example/) directory.
 
 ```js
 grunt.initConfig({
-    mocha: {
+    "mocha-server": {
         // Setting 'coverage' option to true, using defaults
         coverageOne: {
             src: 'test/*.js',

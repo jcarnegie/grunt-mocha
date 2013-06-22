@@ -1,8 +1,8 @@
 {
-    "name": "grunt-mocha",
+    "name": "grunt-server-mocha",
     "description": "A Grunt plugin for running server-side Mocha tests.",
     "version": "0.1.1",
-    "homepage": "https://github.com/jcarnegie/grunt-mocha",
+    "homepage": "https://github.com/jcarnegie/grunt-server-mocha",
 
     "author": {
         "name": "Jeff Carnegie",
@@ -18,16 +18,16 @@
 
     "repository": {
         "type": "git",
-        "url": "git://github.com/jcarnegie/grunt-mocha.git"
+        "url": "git://github.com/jcarnegie/grunt-server-mocha.git"
     },
 
     "bugs": {
-        "url": "https://github.com/jcarnegie/grunt-mocha/issues"
+        "url": "https://github.com/jcarnegie/grunt-server-mocha/issues"
     },
 
     "licenses": [{
         "type": "MIT",
-        "url": "https://github.com/jcarnegie/grunt-mocha/blob/master/LICENSE-MIT"
+        "url": "https://github.com/jcarnegie/grunt-server-mocha/blob/master/LICENSE-MIT"
     }],
 
     "main": "Gruntfile.js",

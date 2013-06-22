@@ -21,7 +21,7 @@ module.exports = (grunt) ->
     # Add local node_modules to path
     module.paths.push(cwd, path.join(cwd, "node_modules"))
 
-    grunt.registerMultiTask "mocha", "Run server-side Mocha tests as RequireJS modules", ->
+    grunt.registerMultiTask "mocha-server", "Run server-side Mocha tests as RequireJS modules", ->
         options = this.options
             asyncOnly: false
             bail: false
